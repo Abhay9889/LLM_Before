@@ -1,0 +1,15 @@
+NumPy --> is a python lib who help us to perform manipualtion and mathmetical calculation eassily.
+NumPy Array--> Is a multidimensional matrix of numbers to store efficently in memory.
+ex-> Image -> 2D/3D array, Dataset-> 2D array, NN Weigths-> matrices, Vector feature-> 1D arrays
+
+
+---------------------------Datatypes----------------------------
+| dtype   | Use             |
+| ------- | --------------- |
+| int32   | integers        |
+| float32 | ML computations |
+| float64 | high precision  |
+| uint8   | images          |
+Pixel value range = 0 → 255
+dtype = uint8
+

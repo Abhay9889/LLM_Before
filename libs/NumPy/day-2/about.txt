@@ -1,0 +1,66 @@
+SoftMax  --->  NN output raw sources called logits.   Ex----->[3.2, 1.5, -0.7]
+ex or values are not prob. but softmax coverts them into a prob. distribution.
+formula --> output range is 0 to 1
+sum always equals 1
+----------------------------------------------------------------------------------------
+
+Log Function
+Logarithm is used in cross entropy loss.
+log(ab)=log a + log b
+It is used to multiply prob.'s becomes addition of logs which is numerically stable.
+P = 0.9 × 0.8 × 0.7
+logP = log(0.9) + log(0.8) + log(0.7)
+----------------------------------------------------------------------------------------------
+
+ArgMax
+It returns the index of largest value
+[0.2, 0.6, 0.2]
+prediction --> class = 1
+same argmin use for finding min index
+--------------------------------------------------------------------------------------------
+
+Brodcasting Rules
+It allows operation b/w array of diff. shapes, instead of coping data, numpy virtually expand arrays.
+Ex---> 
+(3,3)
++
+(3,)
+-----------------------------------------------------------------------------------------------------------
+
+Positional Encoding
+Transformer Embeddings
+E(seq_len X d_model)
+Ex---> (4 × 6)
+add-> E + PE
+------------------------------------------------------------------------------------------------
+
+Scaled dot product attension
+-> operation in Transformer
+Attention(Q,K,V)=SoftMax(QK^T/underroot(d low k)) V
+Q--> Querry(What is current token asking for) ,  K -> Key(identify of every word),  K shape → (sequence_length × d_k)
+V -> value(actual info to pass),   V shape → (sequence_length × d_v)
+d_k = dimension of key vectors
+| Matrix | Shape |
+| ------ | ----- |
+| X      | 3×4   |
+| Wq     | 4×4   |
+| Q      | 3×4   |
+Query → asks question
+Key → identifies words
+Value → provides information
+----------------------------------------------------------------------------------------------------------------------------
+
+Einstein Summation
+-> repeated indices imply Summation automatically.
+Cij​=k∑​Aik​Bkj​  /// C_ij = Σ_k A_ik * B_kj
+this is just matrix multiplications.
+np.einsum("indices", tensors)
+input_indices -> output_indices
+| symbol | meaning             |
+| ------ | ------------------- |
+| b      | batch               |
+| q      | query token         |
+| k      | key token           |
+| d      | embedding dimension |
+result Shape
+(batch, query_tokens, key_tokens)
